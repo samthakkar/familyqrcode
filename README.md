@@ -21,7 +21,7 @@ streamlit run streamlit_app.py
 This repository is public, which is required for free GitHub Pages hosting.
 On GitHub, open **Settings → Pages**, choose **Deploy from a branch**, select
 `mts` and `/docs`, then save. GitHub Pages will publish the site at
-`https://pknowledge.github.io/sample/`.
+`https://iamsamirthakkar.github.io/familyqrcode/`.
 
 The app's default GitHub Pages URL matches this repository. Wait for the page
 to publish before distributing QR codes. If the repository or Pages URL changes,

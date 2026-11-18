@@ -33,7 +33,7 @@ COUNT_HEADERS = (
     "count",
 )
 PRIORITY_HEADERS = ("priority", "entrypriority", "slotpriority")
-DEFAULT_PAGES_URL = "https://pknowledge.github.io/sample/"
+DEFAULT_PAGES_URL = "https://iamsamirthakkar.github.io/familyqrcode/"
 
 
 def read_family_file(file_name: str, file_bytes: bytes) -> pd.DataFrame:
@@ -119,7 +119,7 @@ def main() -> None:
     pages_base_url = st.text_input(
         "GitHub Pages site URL",
         value=DEFAULT_PAGES_URL,
-        help="For this repository, the expected URL is https://pknowledge.github.io/sample/.",
+        help="For this repository, the expected URL is https://iamsamirthakkar.github.io/familyqrcode/.",
     )
     try:
         pages_base_url = normalize_pages_base_url(pages_base_url)
