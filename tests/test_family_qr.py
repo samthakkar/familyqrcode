@@ -24,7 +24,7 @@ from streamlit_app import make_template, read_family_file
 class FamilyQrTests(unittest.TestCase):
     def test_page_url_contains_encoded_family_and_event_details(self) -> None:
         page_url = build_family_page_url(
-            "https://iamsamirthakkar.github.io/familyqrcode",
+            "https://samthakkar.github.io/familyqrcode",
             "Samir & Family",
             5,
             date(2026, 12, 25),
@@ -37,7 +37,7 @@ class FamilyQrTests(unittest.TestCase):
         parsed_url = urlsplit(page_url)
         params = parse_qs(parsed_url.query)
         self.assertEqual(parsed_url.scheme, "https")
-        self.assertEqual(parsed_url.netloc, "iamsamirthakkar.github.io")
+        self.assertEqual(parsed_url.netloc, "samthakkar.github.io")
         self.assertEqual(parsed_url.path, "/familyqrcode/")
         self.assertEqual(params["event"], ["Moksh No Dwar"])
         self.assertEqual(params["family"], ["Samir & Family"])
@@ -48,7 +48,7 @@ class FamilyQrTests(unittest.TestCase):
 
     def test_pages_base_url_requires_https(self) -> None:
         with self.assertRaises(ValueError):
-            normalize_pages_base_url("http://iamsamirthakkar.github.io/familyqrcode/")
+            normalize_pages_base_url("http://samthakkar.github.io/familyqrcode/")
 
     def test_validation_checks_family_count_and_priority(self) -> None:
         data = pd.DataFrame(
@@ -112,7 +112,7 @@ class FamilyQrTests(unittest.TestCase):
                 {"name": "Patel Family", "members": 5, "priority": 2},
                 {"name": "Lee Family", "members": 2, "priority": 1},
             ],
-            "https://iamsamirthakkar.github.io/familyqrcode/",
+            "https://samthakkar.github.io/familyqrcode/",
             "Family Reunion",
             date(2026, 12, 25),
             time(18, 30),
