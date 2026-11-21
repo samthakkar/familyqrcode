@@ -45,6 +45,7 @@ class FamilyQrTests(unittest.TestCase):
         self.assertEqual(params["date"], ["2026-12-25"])
         self.assertEqual(params["slot"], ["05:00 PM - 05:15 PM"])
         self.assertEqual(params["headline"], ["Welcome"])
+        self.assertEqual(params["organization"], ["Nirmal Jain Sangh Auckland"])
 
     def test_pages_base_url_requires_https(self) -> None:
         with self.assertRaises(ValueError):

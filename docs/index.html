@@ -64,6 +64,15 @@
         overflow-wrap: anywhere;
       }
 
+      .welcome .organization {
+        margin: 0 0 4px;
+        color: #50004f;
+        font-size: clamp(11px, 3vw, 16px);
+        font-weight: 700;
+        line-height: 1.1;
+        overflow-wrap: anywhere;
+      }
+
       .welcome p {
         margin: 5px 0 0;
         color: #50004f;
@@ -123,6 +132,7 @@
   <body>
     <main class="poster" id="pass" hidden>
       <header class="welcome">
+        <p class="organization" id="organization"></p>
         <h1 id="welcome"></h1>
         <p id="subtitle" hidden></p>
       </header>
@@ -140,7 +150,7 @@
           <span id="date"></span>
         </div>
         <div class="detail">
-          <strong>Time slot</strong>
+          <strong>Entry Time</strong>
           <span id="slot"></span>
         </div>
       </section>
@@ -156,6 +166,7 @@
       const eventName = (params.get("event") || "").trim().replace(/^to\s+/i, "");
       const headline = (params.get("headline") || "Welcome").trim();
       const subtitle = (params.get("subtitle") || "").trim();
+      const organization = (params.get("organization") || "").trim();
       const eventDate = (params.get("date") || "").trim();
       const timeSlot = (params.get("slot") || "").trim();
 
@@ -186,7 +197,9 @@
         timeSlot
       ) {
         document.getElementById("welcome").textContent =
-          `${headline || "Welcome"} TO ${eventName}`;
+          `${headline || "Welcome"} To ${eventName}`;
+        document.getElementById("organization").textContent = organization;
+        document.getElementById("organization").hidden = !organization;
         document.getElementById("subtitle").textContent = subtitle;
         document.getElementById("subtitle").hidden = !subtitle;
         document.getElementById("family").textContent = family;

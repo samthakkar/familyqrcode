@@ -134,6 +134,7 @@ def build_family_page_url(
     event_name: str,
     headline: str,
     subtitle: str,
+    organization: str = "Nirmal Jain Sangh Auckland",
 ) -> str:
     event_title = event_name.strip()
     if event_title.casefold().startswith("to "):
@@ -147,6 +148,7 @@ def build_family_page_url(
             "slot": time_slot,
             "headline": headline.strip(),
             "subtitle": subtitle.strip(),
+            "organization": organization.strip(),
         }
     )
     return f"{normalize_pages_base_url(base_url)}?{query}"
