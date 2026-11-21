@@ -134,7 +134,7 @@ def build_family_page_url(
     event_name: str,
     headline: str,
     subtitle: str,
-    organization: str = "Nirmal Jain Sangh Auckland",
+    organization: str = "New Zealand Nirmal Jain Sangh",
 ) -> str:
     event_title = event_name.strip()
     if event_title.casefold().startswith("to "):
